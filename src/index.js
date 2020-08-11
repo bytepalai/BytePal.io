@@ -6,9 +6,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import TermsView from './TermsView'
+import TermsView from './TermsView.js'
 import HowWorks from './HowWorks'
-import PrivacyView from './PrivacyView'
+import PrivacyView from './PrivacyView.js'
 import * as serviceWorker from './serviceWorker';
 import { Route,  Switch, BrowserRouter as Router } from 'react-router-dom';
 

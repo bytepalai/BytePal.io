@@ -3,10 +3,10 @@
 */
 import React from 'react';
 import './App.css';
-import {ComplexGrid2} from './Main.js';
-import {ButtonAppBar} from './ButtonApp.js';
+import {MainCard} from './components/Main.js';
+import {ButtonAppBar} from './components/ButtonApp.js';
 import { Link } from 'react-router-dom'
-import {Terms} from './Terms.js';
+import {Terms} from './copyright/Terms.js';
 import icon5 from './Assets/icon5.png'
 
 
@@ -24,7 +24,7 @@ function TermsView() {
           <ButtonAppBar/>
           <Terms/>
           <h1></h1>
-          <ComplexGrid2 option="second" display={image3} title="Company" description={texts} logo="empty" images="empty"/>
+          <MainCard option="second" display={image3} title="Company" description={texts} logo="empty" images="empty"/>
         </header>
     </div>
   );

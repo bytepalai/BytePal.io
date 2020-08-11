@@ -4,8 +4,8 @@
 
 import React from 'react';
 import './App.css';
-import {ComplexGrid2} from './Main.js';
-import {ButtonAppBar} from './ButtonApp.js';
+import {MainCard} from './components/Main.js';
+import {ButtonAppBar} from './components/ButtonApp.js';
 import { Link } from 'react-router-dom'
 import icon5 from './Assets/icon5.png'
 import icon6 from './Assets/icon6.png'
@@ -13,9 +13,6 @@ import icon7 from './Assets/icon7.png'
 
 
 function HowWorks() {
-
-
-
   const image3 = icon5
   const image4 = icon6
   const image5 = icon7
@@ -26,10 +23,6 @@ function HowWorks() {
   var texts = ["line", <Link style={{ textDecoration: 'none', color:'black' }} to={"/how"}>How It Works </Link>, <Link style={{ textDecoration: 'none', color:'black' }} to={"/terms"}> Terms & Conditions </Link>, <Link style={{ textDecoration: 'none', color:'black' }} to={"/privacy"}> Privacy Policy </Link>,"support@bytepal.io", "line", "divider", "line", "Copyright © 2020 BytePal AI, LLC. All rights reserved." ]
   var tags = [0,1,2,3,4]
 
-  const listh1 = tags.map((tag) =>
-  <h1> </h1>
-  )
-
   return (
     <div style={{ // className="App" for div   // className="App-header" for header
       backgroundColor: '#ebf6f5', //'white',
@@ -37,11 +30,11 @@ function HowWorks() {
     }}>
       <header>
         <ButtonAppBar/>
-        <ComplexGrid2 option="second" display={image4} title="Messaging" description ={texts1} logo="empty" images="empty"/>
+        <MainCard option="second" display={image4} title="Messaging" description ={texts1} logo="empty" images="empty"/>
         <h1></h1>
-        <ComplexGrid2 option="second" display={image5} title="Voice" description ={texts2} logo="empty" images="empty" />
+        <MainCard option="second" display={image5} title="Voice" description ={texts2} logo="empty" images="empty" />
         <h1></h1>
-        <ComplexGrid2 option="second" display={image3} title="Company" description={texts} logo="empty" images="empty"/>
+        <MainCard option="second" display={image3} title="Company" description={texts} logo="empty" images="empty"/>
       </header>
     </div>
   );

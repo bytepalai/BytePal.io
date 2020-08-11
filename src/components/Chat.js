@@ -2,10 +2,11 @@
  Copyright © 2020 BYTEPAL AI, LLC And Its Affiliates. All rights reserved.
 */
 import React, { useState, useEffect } from 'react';
-import './App.css';
-import icon1 from './Assets/icon1.png'
+import '../App.css';
+import icon1 from '../Assets/icon1.png'
 import { Widget, addResponseMessage } from 'react-chat-widget';
 import 'react-chat-widget/lib/styles.css';
+import hostname from './Constants.js'
 
 function play(sound) {
   var audio = new Audio(sound);
@@ -16,10 +17,12 @@ function ChatView(props) {
     const image1 = icon1
     var voice
     var model_response
-    var audio_url = 'http://127.0.0.1:3000/13b4730b-c0be-4d41-9ef3-947558156b0e'
+    var audio_url
 
     const handleNewUserMessage = (newMessage) => {
-      fetch('http://34.73.221.176:8001/interact_io', {
+
+      var address = hostname + 'interact_io'
+      fetch(address, {
          method: "POST",
          mode: 'cors',
          headers: {
@@ -46,6 +49,7 @@ function ChatView(props) {
 
 
   return (
+
     <Widget
       handleNewUserMessage={handleNewUserMessage}
       profileAvatar={image1}

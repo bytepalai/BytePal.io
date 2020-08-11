@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Hidden from '@material-ui/core/Hidden';
-import bytepal_logo from './Assets/bytepal.png'
+import bytepal_logo from '../Assets/bytepal.png'
 
 
 const useStyles3 = makeStyles((theme) => ({

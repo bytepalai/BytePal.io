@@ -4,15 +4,12 @@
 
 import React from 'react';
 import { makeStyles} from '@material-ui/core/styles';
-
 import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import Send from '@material-ui/icons/Send';
 import Paper from '@material-ui/core/Paper';
-
-
-
+import hostname from './Constants.js'
 
 
 const useStyles2 = makeStyles((theme) => ({
@@ -73,7 +70,8 @@ export const CustomizedInputBase = () => {
           'Content-Type': 'application/json' },
         body: JSON.stringify({ email:email})
       };
-      fetch('https://api.bytepal.io/mailchimp', requestOptions)
+      var mailchimpEmail = hostname + 'mailchimp'
+      fetch(mailchimpEmail, requestOptions)
       alert("Email Sent");
     }
   }

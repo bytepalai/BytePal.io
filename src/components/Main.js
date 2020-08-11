@@ -65,7 +65,7 @@ const useStyles1 = makeStyles((theme) => ({
 
 }));
 
-export const ComplexGrid2 = (props) => {
+export const MainCard = (props) => {
       const classes = useStyles1();
       var show
 

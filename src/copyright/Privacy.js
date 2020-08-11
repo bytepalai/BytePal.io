@@ -1,7 +1,6 @@
 /*
  Copyright © 2020 BYTEPAL AI, LLC And Its Affiliates. All rights reserved.
 */
-
 import React from 'react';
 import { makeStyles, createMuiTheme  } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
@@ -23,7 +22,6 @@ const useStyles1 = makeStyles((theme) => ({
    fontSize:'0.7em',//Insert your required size
  }
 }));
-
 
 
 export const Privacy = (props) => {

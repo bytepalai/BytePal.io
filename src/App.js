@@ -3,9 +3,9 @@
 */
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import {ComplexGrid2} from './Main.js';
-import {ButtonAppBar} from './ButtonApp.js';
-import ChatView from './Chat.js';
+import {MainCard} from './components/Main.js';
+import {ButtonAppBar} from './components/ButtonApp.js';
+import ChatView from './components/Chat.js';
 import { Link } from 'react-router-dom';
 import icon1 from './Assets/icon1.png';
 import icon2 from './Assets/icon2.png';
@@ -13,12 +13,14 @@ import icon5 from './Assets/icon5.png';
 import bytepal from './Assets/bytepalio.gif';
 import apple from './Assets/apple.png';
 import Cookies from 'js-cookie';
+import hostname from './components/Constants.js'
 import { addResponseMessage } from 'react-chat-widget';
 
 function App() {
 
     useEffect(() => {
-      fetch('http://34.73.221.176:8001/setcookie', {
+      var setCookie = hostname + 'setcookie'
+      fetch(setCookie, {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -30,7 +32,23 @@ function App() {
       })
       .then(res => {
 
-        fetch('http://34.73.221.176:8001/create_agent_io', {
+        var deleteAgent = hostname + 'delete_agent_io'
+
+        fetch(deleteAgent, {
+          method: "GET",
+          mode: 'cors',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Cache': 'no-cache'
+          },
+          credentials: 'include'
+        })
+        .then(res => {
+
+          var createAgent = hostname + 'create_agent_io'
+
+        fetch(createAgent, {
           method: "GET",
           mode: 'cors',
           headers: {
@@ -44,6 +62,8 @@ function App() {
           console.log(res); // undefined
         })
       })
+
+    })
 
       addResponseMessage('Hello');
    }, []);
@@ -70,14 +90,14 @@ function App() {
     }}>
     <header>
         <ButtonAppBar/>
+        <MainCard option="first" display={iphone} title="BytePal AI" description ={texts0} logo={logo} images="empty" />
+        <h1></h1>
+        <MainCard option="second" display={image1} title="Technology" description ={texts1} logo="empty" images="empty"/>
+        <h1></h1>
+        <MainCard option="second" display={image2} title="Seamless Interaction" description ={texts2} logo="empty" images="empty" />
+        <h1></h1>
+        <MainCard option="second" display={image3} title="Company" description={texts} logo="empty" images="empty"/>
         <ChatView/>
-        <ComplexGrid2 option="first" display={iphone} title="BytePal AI" description ={texts0} logo={logo} images="empty" />
-        <h1></h1>
-        <ComplexGrid2 option="second" display={image1} title="Technology" description ={texts1} logo="empty" images="empty"/>
-        <h1></h1>
-        <ComplexGrid2 option="second" display={image2} title="Seamless Interaction" description ={texts2} logo="empty" images="empty" />
-        <h1></h1>
-        <ComplexGrid2 option="second" display={image3} title="Company" description={texts} logo="empty" images="empty"/>
       </header>
     </div>
   );
