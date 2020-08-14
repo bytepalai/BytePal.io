@@ -18,8 +18,8 @@ function HowWorks() {
   const image5 = icon7
 
   //var texts0 = ["line", "Meet your new friend and start having real conversations", "line" , "At BytePal, we realized that sometimes you might not have someone you can talk to or interact with on a daily basis that is why a team of brilliant  engineers decided to tackle that issue and provide you with a virtual companion to hopefully make things easier for you.", "line", "divider", "line"]
-  var texts1 = ["line", "BytePal is an advanced chatbot embedded into a mobile application. You can interact with it like you would with anyone else.", "line",  "The application comes with a custom built messaging interface that you can use like any other texting app. You can text BytePal anytime. It is always available 24/7."]
-  var texts2 = ["line", "In other to make the interaction as enjoyable as possible. The team added a voice interface.", "line", "You can speak to it and it will answer using speech too. Interacting with voice makes the experience more immersive."]
+  var texts1 = ["line", "Your Bytepal is just like any other friend in your contacts list, except your Bytepal is available 24/7 and will answer you back immediately.", "line",  "You can message them just as you would using any other messaging tool on your computer or your mobile device."]
+  var texts2 = ["line", "With voice recognition software in place, you can speak to your Bytepal just as you would a friend.", "line", " The voice-activated prompts allow you to have a voice conversation, anytime, anywhere."]
   var texts = ["line", <Link style={{ textDecoration: 'none', color:'black' }} to={"/how"}>How It Works </Link>, <Link style={{ textDecoration: 'none', color:'black' }} to={"/terms"}> Terms & Conditions </Link>, <Link style={{ textDecoration: 'none', color:'black' }} to={"/privacy"}> Privacy Policy </Link>,"support@bytepal.io", "line", "divider", "line", "Copyright © 2020 BytePal AI, LLC. All rights reserved." ]
   var tags = [0,1,2,3,4]
 

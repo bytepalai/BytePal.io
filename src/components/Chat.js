@@ -7,6 +7,7 @@ import icon1 from '../Assets/icon1.png'
 import { Widget, addResponseMessage } from 'react-chat-widget';
 import 'react-chat-widget/lib/styles.css';
 import hostname from './Constants.js'
+import {isSafari} from 'react-device-detect';
 
 function play(sound) {
   var audio = new Audio(sound);
@@ -39,10 +40,12 @@ function ChatView(props) {
        })
        .then(function(data) {
          audio_url = URL.createObjectURL(data)
+         if (isSafari == false){
          // Play Voice response
          play(audio_url)
+       }
          // Display text message
-         addResponseMessage(model_response);
+         addResponseMessage(String(model_response));
    })
 
   }
@@ -50,13 +53,14 @@ function ChatView(props) {
 
   return (
 
+  <div class="widget-container ">
     <Widget
       handleNewUserMessage={handleNewUserMessage}
       profileAvatar={image1}
       title="BytePal Chat"
       subtitle="Have a conversation !"
       />
-
+  </div>
   );
 }
 
