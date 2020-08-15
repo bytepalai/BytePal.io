@@ -102,6 +102,7 @@ function App() {
     <header>
         <ButtonAppBar/>
         <MainCard option="first" display={iphone} title="BytePal AI" description ={texts0} logo={logo} images="empty" />
+        <h1></h1>
         {chat}
         <MainCard option="second" display={image1} title="Technology" description ={texts1} logo="empty" images="empty"/>
         <h1></h1>
