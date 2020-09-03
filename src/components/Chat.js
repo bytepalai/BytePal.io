@@ -50,10 +50,17 @@ function ChatView(props) {
 
   }
 
+  let styles = {
+      root: {
+        fontFamily: 'Roboto'
+      }
+    }
+
+
 
   return (
 
-  <div class="widget-container ">
+    <div className="App">
     <Widget
       handleNewUserMessage={handleNewUserMessage}
       profileAvatar={image1}

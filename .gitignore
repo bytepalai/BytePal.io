@@ -1,0 +1,9 @@
+# React JS
+node_modules
+**/tmp*
+package-lock.json
+
+
+# Mac OS
+**/.DS_Store
+.DS_Store

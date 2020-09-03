@@ -19,7 +19,7 @@ function HowWorks() {
 
   //var texts0 = ["line", "Meet your new friend and start having real conversations", "line" , "At BytePal, we realized that sometimes you might not have someone you can talk to or interact with on a daily basis that is why a team of brilliant  engineers decided to tackle that issue and provide you with a virtual companion to hopefully make things easier for you.", "line", "divider", "line"]
   var texts1 = ["line", "Your Bytepal is just like any other friend in your contacts list, except your Bytepal is available 24/7 and will answer you back immediately.", "line",  "You can message them just as you would using any other messaging tool on your computer or your mobile device."]
-  var texts2 = ["line", "With voice recognition software in place, you can speak to your Bytepal just as you would a friend.", "line", " The voice-activated prompts allow you to have a voice conversation, anytime, anywhere."]
+  var texts2 = ["line", "Bytepal is here to be your friend. 24/7 conversations via text or speech.", "line", "With the latest technology and machine learning, grow your friendship with Bytepal. Regular chats and deep conversations, find your new friend in Bytepal."]
   var texts = ["line", <Link style={{ textDecoration: 'none', color:'black' }} to={"/how"}>How It Works </Link>, <Link style={{ textDecoration: 'none', color:'black' }} to={"/terms"}> Terms & Conditions </Link>, <Link style={{ textDecoration: 'none', color:'black' }} to={"/privacy"}> Privacy Policy </Link>,"support@bytepal.io", "line", "divider", "line", "Copyright © 2020 BytePal AI, LLC. All rights reserved." ]
   var tags = [0,1,2,3,4]
 
