@@ -83,7 +83,25 @@ export const MainCard = (props) => {
           ].join(','),
         }
       });
+
       const theme2 = createMuiTheme({
+  typography: {
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+      fontSize: 22,
+  },
+});
+      /*const theme2 = createMuiTheme({
         typography: {
           fontFamily: [
             'Teko', 'sans-serif',
@@ -91,7 +109,7 @@ export const MainCard = (props) => {
           ].join(','),
           fontSize: 30,
         }
-      });
+      });*/
       var app_logo = " "
 
       if(props.logo === "empty"){
