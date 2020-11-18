@@ -75,9 +75,10 @@ function App() {
   const image1 = icon1
   const image2 = icon2
   const image3 = icon5
-  var texts0 = ["line", "Your Bytepal, your 24/7 virtual companion.", "line" , "Have you ever just needed someone to talk to and could not think of who to call? This increasing problem was what spurred us at Bytepal to develop and grow an Artificial Intelligence (AI) and machine learning technology that can fit into your life and be that companion you so desperately need. ", "line", "divider", "line"]
-  var texts1 = ["line", "Using the most advanced AI technology available, Your Bytepal has been built using the best AI research to enable it to learn from you every day.", "line",  "The core technology comes from Deep Learning Research applied to Natural Language Processing. It is capable of language understanding, voice recognition and speech."]
-  var texts2 = ["line", "By downloading your Bytepal from the App Store, you will be able to interact with it on your computer or mobile device.", "line", "You can text or just talk to it. The voice-activated prompts recognize your voice and you can start your conversation with them anywhere, and anytime."]
+  var texts0 = ["line", "Chatbot Pal that is always online for you!", "line" , "Bytepal is an AI Chatbot that is always available to talk to you.", "It is the world's first Virtual Friend that you will ever meet. You can have conversations that you never imagined to have with a Virtual Assistant.", "line", "divider", "line"]
+
+  var texts1 = ["line", "We have made BytePal for you to have real conversations. It's your virtual friend who's always up to listen to anything and everything you want to talk about.", "line",  "The core technology comes from Deep Learning Research applied to Natural Language Processing. It is capable of understanding human language, virtual voice recognition and speech recognition without any issues."]
+  var texts2 = ["line", "BytePal is a virtual AI assistant that learns and understands you better each day you use it. Once you start using it, it'll know if you're a cat person or dog person.", "line", "You can text or just talk to it. The voice-activated prompts recognize your voice and you can start your conversation with them anywhere, and anytime."]
   var texts = ["line", <Link style={{ textDecoration: 'none', color:'black' }} to={"/how"}>How It Works </Link>, <Link style={{ textDecoration: 'none', color:'black' }} to={"/terms"}> Terms & Conditions </Link>, <Link style={{ textDecoration: 'none', color:'black' }} to={"/privacy"}> Privacy Policy </Link>,"support@bytepal.io", "line", "divider", "line", "Copyright © 2020 BytePal AI, LLC. All rights reserved." ]
   var tags = [0,1,2,3,4]
   const listh1 = tags.map((tag) =>
@@ -101,12 +102,12 @@ function App() {
     }}>
     <header>
         <ButtonAppBar/>
-        <MainCard option="first" display={iphone} title="BytePal AI" description ={texts0} logo={logo} images="empty" />
+        <MainCard option="first" display={iphone} title="What is Bytepal?" description ={texts0} logo={logo} images="empty" />
         <h1></h1>
         {chat}
-        <MainCard option="second" display={image1} title="Technology" description ={texts1} logo="empty" images="empty"/>
+        <MainCard option="second" display={image1} title="Why BytePal?" description ={texts1} logo="empty" images="empty"/>
         <h1></h1>
-        <MainCard option="second" display={image2} title="Seamless Interaction" description ={texts2} logo="empty" images="empty" />
+        <MainCard option="second" display={image2} title="A Virtual friend in need is a friend indeed" description ={texts2} logo="empty" images="empty" />
         <h1></h1>
         <MainCard option="second" display={image3} title="Company" description={texts} logo="empty" images="empty"/>
       </header>
