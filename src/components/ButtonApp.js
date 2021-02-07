@@ -5,6 +5,11 @@
 import React from 'react';
 import { makeStyles, createMuiTheme  } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
@@ -15,6 +20,7 @@ import { Link } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Hidden from '@material-ui/core/Hidden';
+import Card from '@material-ui/core/Card';
 import bytepal_logo from '../Assets/bytepal.png'
 
 
@@ -48,7 +54,11 @@ const useStyles3 = makeStyles((theme) => ({
   },
 }));
 
+
+
 export const ButtonAppBar = (props) => {
+
+
   const classes = useStyles3();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -72,6 +82,11 @@ export const ButtonAppBar = (props) => {
   const listMenus= items.map((item) =>
   <MenuItem onClick={handleClose}> <Link style={{ textDecoration: 'none', color:'black' }} to={item[1]}> {item[0]} </Link></MenuItem>
   )
+
+  const listPages= items.map((item) =>
+  <Link style={{ textDecoration: 'none', color:'black', fontFamily:"HelveticaNeue-Bold", paddingRight:20, fontSize:20}} to={item[1]}> {item[0]} </Link>
+  )
+
   const theme = createMuiTheme({
     typography: {
       fontFamily: [
@@ -89,10 +104,15 @@ export const ButtonAppBar = (props) => {
     },
   });
 
+  const clickSummary = (event) => {
+  event.stopPropagation();
+};
+
   return (
     <ThemeProvider theme={theme}>
-      <div className={classes.root}  >
+      <div className={classes.root} onClick={clickSummary}>
         <AppBar position="fixed" color="white" className={classes.size}>
+          <Hidden only={['xs', 'sm']}>
           <Toolbar>
             <Link style={{ textDecoration: 'none', color:'white' }} to="/">
               <img src={bytepal_logo} style={{height:50,width:175, marginRight: theme.spacing(3)}} />
@@ -101,39 +121,38 @@ export const ButtonAppBar = (props) => {
             <Hidden only={['xs', 'sm']}>
               {listButtons}
             </Hidden>
-            <Hidden only={['md', 'lg', 'xl']}>
-              <div>
-                <IconButton
-                  className={classes.menuButton1}
-                  aria-label="account of current user"
-                  aria-controls="menu-appbar"
-                  aria-haspopup="true"
-                  onClick={handleMenu}
-                  color="inherit"
-                  style={{marginLeft:52}}
-                  >
-                  <MenuIcon/>
-                </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={open}
-                onClose={handleClose}
-              >
-                {listMenus}
-              </Menu>
-            </div>
-          </Hidden>
+
         </Toolbar>
+        </Hidden>
+
+        <Hidden only={['md', 'lg', 'xl']}>
+
+        <Accordion position="fixed" color="white" className={classes.size} square={true}>
+
+
+
+    <AccordionSummary
+      expandIcon={
+        <MenuIcon/>
+      }
+      aria-controls="panel1a-content"
+      id="panel1a-header"
+    >
+    <Link style={{ textDecoration: 'none', color:'white' }} to="/">
+      <img src={bytepal_logo} style={{height:50,width:175, marginRight: theme.spacing(3), marginTop:theme.spacing(-1), marginBottom:theme.spacing(-1.5)} } />
+    </Link>
+    <Divider orientation="vertical" style={{height: 25} }/>
+    <Hidden only={['xs', 'sm']}>
+      {listButtons}
+    </Hidden>
+    </AccordionSummary>
+    <AccordionDetails>
+    <Hidden only={['md', 'lg', 'xl']}>
+      {listPages}
+      </Hidden>
+    </AccordionDetails>
+  </Accordion>
+  </Hidden>
       </AppBar>
   </div>
 </ThemeProvider>

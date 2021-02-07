@@ -150,12 +150,17 @@ export const MainCard = (props) => {
           <div className={classes.root}>
             <Paper className={classes.paper} square={true}  elevation={3}>
               <Grid container spacing={1}>
+
                 <Grid item>
                   {show}
                 </Grid>
+
+
                 <Grid item xs={12} sm container>
                   <Grid item xs container direction="column" spacing={2}>
+                  <div style={{marginLeft:15}}>
                     <Grid item xs>
+
                       <Typography variant="h2"fontFamily="Helvetica" style={{marginLeft:15}} >
                         {props.title}
                       </Typography>
@@ -171,8 +176,13 @@ export const MainCard = (props) => {
                     <Grid item>
                       <CustomizedInputBase/>
                     </Grid>
+
+                    </div>
+
                   </Grid>
+
                 </Grid>
+
               </Grid>
             </Paper>
           </div>
