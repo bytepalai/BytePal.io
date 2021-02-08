@@ -146,7 +146,7 @@ export const MainCard = (props) => {
                 </Grid>
                 <Grid item xs={12} sm container>
                   <Grid item xs container direction="column" spacing={2}>
-                    <div style={{marginLeft:15}}>
+                    <div style={{marginLeft:40}}>
                       <Grid item xs>
                         <Typography variant="h2"fontFamily="Helvetica" style={{marginLeft:15}} >
                           {props.title}
