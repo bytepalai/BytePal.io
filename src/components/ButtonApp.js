@@ -104,14 +104,11 @@ export const ButtonAppBar = (props) => {
     },
   });
 
-  const clickSummary = (event) => {
-  event.stopPropagation();
-};
-
   return (
     <ThemeProvider theme={theme}>
-      <div className={classes.root} onClick={clickSummary}>
+      <div className={classes.root}>
         <AppBar position="fixed" color="white" className={classes.size}>
+        
           <Hidden only={['xs', 'sm']}>
           <Toolbar>
             <Link style={{ textDecoration: 'none', color:'white' }} to="/">
@@ -121,38 +118,28 @@ export const ButtonAppBar = (props) => {
             <Hidden only={['xs', 'sm']}>
               {listButtons}
             </Hidden>
-
-        </Toolbar>
+          </Toolbar>
         </Hidden>
 
         <Hidden only={['md', 'lg', 'xl']}>
+          <Accordion position="fixed" color="white" className={classes.size} square={true}>
+            <AccordionSummary
+              expandIcon={
+                <MenuIcon/>
+              }
+              aria-controls="panel1a-content"
+              id="panel1a-header">
+                <Link style={{ textDecoration: 'none', color:'white' }} to="/">
+                  <img src={bytepal_logo} style={{height:50,width:175, marginRight: theme.spacing(3), marginTop:theme.spacing(-1), marginBottom:theme.spacing(-1.5)} } />
+                </Link>
+                <Divider orientation="vertical" style={{height: 30} }/>
+              </AccordionSummary>
+              <AccordionDetails>
+                {listPages}
+              </AccordionDetails>
+            </Accordion>
+          </Hidden>
 
-        <Accordion position="fixed" color="white" className={classes.size} square={true}>
-
-
-
-    <AccordionSummary
-      expandIcon={
-        <MenuIcon/>
-      }
-      aria-controls="panel1a-content"
-      id="panel1a-header"
-    >
-    <Link style={{ textDecoration: 'none', color:'white' }} to="/">
-      <img src={bytepal_logo} style={{height:50,width:175, marginRight: theme.spacing(3), marginTop:theme.spacing(-1), marginBottom:theme.spacing(-1.5)} } />
-    </Link>
-    <Divider orientation="vertical" style={{height: 25} }/>
-    <Hidden only={['xs', 'sm']}>
-      {listButtons}
-    </Hidden>
-    </AccordionSummary>
-    <AccordionDetails>
-    <Hidden only={['md', 'lg', 'xl']}>
-      {listPages}
-      </Hidden>
-    </AccordionDetails>
-  </Accordion>
-  </Hidden>
       </AppBar>
   </div>
 </ThemeProvider>

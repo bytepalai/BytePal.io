@@ -101,15 +101,6 @@ export const MainCard = (props) => {
       fontSize: 22,
   },
 });
-      /*const theme2 = createMuiTheme({
-        typography: {
-          fontFamily: [
-            'Teko', 'sans-serif',
-            //'Roboto',
-          ].join(','),
-          fontSize: 30,
-        }
-      });*/
       var app_logo = " "
 
       if(props.logo === "empty"){
@@ -130,7 +121,7 @@ export const MainCard = (props) => {
       <p> {"\n"} </p> :
       <Typography variant="subtitle2" color="textPrimary" fontFamily="Helvetica" style={{marginLeft:15}}>
         {text}
-        </Typography>
+      </Typography>
       )
 
       var image1 = " "
@@ -150,42 +141,34 @@ export const MainCard = (props) => {
           <div className={classes.root}>
             <Paper className={classes.paper} square={true}  elevation={3}>
               <Grid container spacing={1}>
-
                 <Grid item>
                   {show}
                 </Grid>
-
-
                 <Grid item xs={12} sm container>
                   <Grid item xs container direction="column" spacing={2}>
-                  <div style={{marginLeft:15}}>
-                    <Grid item xs>
-
-                      <Typography variant="h2"fontFamily="Helvetica" style={{marginLeft:15}} >
-                        {props.title}
-                      </Typography>
-                      <ThemeProvider theme={theme2}>
+                    <div style={{marginLeft:15}}>
+                      <Grid item xs>
+                        <Typography variant="h2"fontFamily="Helvetica" style={{marginLeft:15}} >
+                          {props.title}
+                        </Typography>
+                        <ThemeProvider theme={theme2}>
                         {listTexts}
-                      </ThemeProvider>
-                      {app_logo}
-                      <p> </p>
-                      {image1}
-                      <p> </p>
-                      {image2}
-                    </Grid>
+                        </ThemeProvider>
+                        {app_logo}
+                        <p> </p>
+                        {image1}
+                        <p> </p>
+                        {image2}
+                      </Grid>
                     <Grid item>
-                      <CustomizedInputBase/>
+                    <CustomizedInputBase/>
                     </Grid>
-
-                    </div>
-
-                  </Grid>
-
+                  </div>
                 </Grid>
-
               </Grid>
-            </Paper>
-          </div>
-        </ThemeProvider>
+            </Grid>
+          </Paper>
+        </div>
+      </ThemeProvider>
   );
 }
