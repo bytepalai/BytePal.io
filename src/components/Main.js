@@ -146,29 +146,32 @@ export const MainCard = (props) => {
                 </Grid>
                 <Grid item xs={12} sm container>
                   <Grid item xs container direction="column" spacing={2}>
-                    <div style={{marginLeft:40}}>
+
                       <Grid item xs>
-                        <Typography variant="h2"fontFamily="Helvetica" style={{marginLeft:15}} >
+                        <div style={{marginLeft:40}}>
+                          <Typography variant="h2"fontFamily="Helvetica" style={{marginLeft:15}} >
                           {props.title}
-                        </Typography>
-                        <ThemeProvider theme={theme2}>
-                        {listTexts}
-                        </ThemeProvider>
-                        {app_logo}
-                        <p> </p>
-                        {image1}
-                        <p> </p>
-                        {image2}
+                          </Typography>
+                          <ThemeProvider theme={theme2}>
+                            {listTexts}
+                            </ThemeProvider>
+                            {app_logo}
+                            <p> </p>
+                            {image1}
+                            <p> </p>
+                            {image2}
+                          </div>
                       </Grid>
-                    <Grid item>
-                    <CustomizedInputBase/>
+                      <Grid item>
+                        <div style={{marginLeft:40}}>
+                          <CustomizedInputBase/>
+                          </div>
+                        </Grid>
+                      </Grid>
                     </Grid>
-                  </div>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Paper>
-        </div>
-      </ThemeProvider>
+                  </Grid>
+                </Paper>
+              </div>
+            </ThemeProvider>
   );
 }
