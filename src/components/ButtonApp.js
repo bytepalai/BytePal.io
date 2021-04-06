@@ -22,6 +22,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Hidden from '@material-ui/core/Hidden';
 import Card from '@material-ui/core/Card';
 import bytepal_logo from '../Assets/bytepal.png'
+import beta_icon from '../Assets/beta.png'
 
 
 const useStyles3 = makeStyles((theme) => ({
@@ -108,12 +109,18 @@ export const ButtonAppBar = (props) => {
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <AppBar position="fixed" color="white" className={classes.size}>
-        
+
           <Hidden only={['xs', 'sm']}>
           <Toolbar>
             <Link style={{ textDecoration: 'none', color:'white' }} to="/">
-              <img src={bytepal_logo} style={{height:50,width:175, marginRight: theme.spacing(3)}} />
+
+              <img src={bytepal_logo} style={{height:50,width:175, marginRight: theme.spacing(1)}} />
             </Link>
+
+              <img src={beta_icon} style={{height:48,width:48, marginRight: theme.spacing(2)}} />
+
+
+
             <Divider orientation="vertical" style={{height: 25} }/>
             <Hidden only={['xs', 'sm']}>
               {listButtons}
@@ -130,8 +137,9 @@ export const ButtonAppBar = (props) => {
               aria-controls="panel1a-content"
               id="panel1a-header">
                 <Link style={{ textDecoration: 'none', color:'white' }} to="/">
-                  <img src={bytepal_logo} style={{height:50,width:175, marginRight: theme.spacing(3), marginTop:theme.spacing(-1), marginBottom:theme.spacing(-1.5)} } />
+                  <img src={bytepal_logo} style={{height:50,width:175, marginRight: theme.spacing(1), marginTop:theme.spacing(-1), marginBottom:theme.spacing(-1.5)} } />
                 </Link>
+              <img src={beta_icon} style={{height:35,width:35, marginRight: theme.spacing(2)}} />
                 <Divider orientation="vertical" style={{height: 30} }/>
               </AccordionSummary>
               <AccordionDetails>
