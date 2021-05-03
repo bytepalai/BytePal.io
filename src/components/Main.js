@@ -108,7 +108,7 @@ export const MainCard = (props) => {
       }
       else {
         // href="https://www.apple.com/ios/app-store/">
-        app_logo = <Link>
+        app_logo = <Link href="https://apps.apple.com/us/app/bytepal-ai/id1535389637" >
         <img className={classes.img2} alt="complex" src={props.logo} style={{marginLeft:15}}/>
         </Link>
       }
